@@ -79,10 +79,15 @@ class Gamma_Distribution
 	double 	GetCDF(double x);
 	double 	GetQuantile(double p);
 
+	double 	GetMean(void);
+	double 	GetVariance(void);
+	double 	GetStdDeviation(void);
+	double 	GetSkewness(void);
+	double 	GetKurtosis(void);
+
 	double 	GetShape(void);
 	double 	GetScale(void);
 	double 	GetRate(void);
-
 	double 	GetAlpha(void);
 	double 	GetBeta(void);
 	double 	GetTheta(void);

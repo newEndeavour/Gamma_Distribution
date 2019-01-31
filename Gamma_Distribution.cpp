@@ -132,6 +132,96 @@ double Gamma_Distribution::GetCDF(double x)
 
 }
 
+//Mean
+double 	Gamma_Distribution::GetMean(void)
+{
+	if (error<0)
+		return error;
+
+	//Shape and Rate
+	if (Beta>0) {
+		return Alpha/Beta;
+	}
+
+	//Shape & Scale
+	if (Theta>0) {		
+		return Alpha*Theta;
+	}
+}
+
+
+//Variance
+double 	Gamma_Distribution::GetVariance(void)
+{
+	if (error<0)
+		return error;
+
+	//Shape and Rate
+	if (Beta>0) {
+		return Alpha/pow(Beta,2);
+	}
+
+	//Shape & Scale
+	if (Theta>0) {		
+		return Alpha*pow(Theta,2);
+	}
+}
+
+
+//Std Deviation
+double 	Gamma_Distribution::GetStdDeviation(void)
+{
+	if (error<0)
+		return error;
+
+	//Shape and Rate
+	if (Beta>0) {
+		return sqrt(Alpha/pow(Beta,2));
+	}
+
+	//Shape & Scale
+	if (Theta>0) {		
+		return sqrt(Alpha*pow(Theta,2));
+	}
+}
+
+
+//Skewness
+double 	Gamma_Distribution::GetSkewness(void)
+{
+	if (error<0)
+		return error;
+
+	//Shape and Rate
+	if (Beta>0) {
+		return 2.0/sqrt(Alpha);
+	}
+
+	//Shape & Scale
+	if (Theta>0) {		
+		return 2.0/sqrt(Alpha);
+	}
+}
+
+
+//Kurtosis
+double 	Gamma_Distribution::GetKurtosis(void)
+{
+	if (error<0)
+		return error;
+
+	//Shape and Rate
+	if (Beta>0) {
+		return 6.0/Alpha;
+	}
+
+	//Shape & Scale
+	if (Theta>0) {		
+		return 6.0/Alpha;
+	}
+}
+
+
 
 //Return Quantile z(P) from probability P
 double Gamma_Distribution::GetQuantile(double p)
