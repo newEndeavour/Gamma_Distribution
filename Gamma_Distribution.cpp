@@ -1,8 +1,8 @@
 /*
   File:         Gamma_Distribution.cpp
-  Version:      0.0.1
+  Version:      0.0.2
   Date:         30-Jan-2019
-  Revision:     30-Jan-2019
+  Revision:     01-Feb-2019
   Author:       Jerome Drouin (jerome.p.drouin@gmail.com)
 
   Editions:	Please go to Gamma_Distribution.h for Edition Notes.
@@ -218,6 +218,26 @@ double 	Gamma_Distribution::GetKurtosis(void)
 	//Shape & Scale
 	if (Theta>0) {		
 		return 6.0/Alpha;
+	}
+}
+
+
+//Entropy
+double 	Gamma_Distribution::GetEntropy(void)
+{
+	if (error<0)
+		return error;
+
+	//Shape and Rate
+	//alpha - ln(beta) + lnGamma(alpha) + (1-alpha)*psi(alpha)
+	if (Beta>0) {
+		return Alpha - log(Beta) + Ln_Gamma_Function(Alpha) + (1-Alpha)*DiGamma_Function(Alpha);
+	}
+
+	//Shape & Scale
+	//alpha + ln(theta) + lnGamma(alpha) + (1-alpha)*psi(alpha)
+	if (Theta>0) {		
+		return Alpha + log(Theta) + Ln_Gamma_Function(Alpha) + (1-Alpha)*DiGamma_Function(Alpha);
 	}
 }
 

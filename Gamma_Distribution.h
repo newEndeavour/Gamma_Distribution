@@ -1,13 +1,9 @@
 /*
   File:         Gamma_Distribution.h
-  Version:      0.0.1
+  Version:      0.0.2
   Date:         30-Jan-2019
-  Revision:     30-Jan-2019
+  Revision:     01-Feb-2019
   Author:       Jerome Drouin (jerome.p.drouin@gmail.com)
-
-  Editions:
-  - 0.0.1	: First version
-  - 0.0.2	: -
 
   References:
   https://github.com/newEndeavour/Gamma_Distribution
@@ -44,6 +40,10 @@
  
   You should have received a copy of the GNU General Public License
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+  Editions:
+  - 0.0.1	: First version
+  - 0.0.2	: Entropy Added.
 
 */
 
@@ -84,6 +84,7 @@ class Gamma_Distribution
 	double 	GetStdDeviation(void);
 	double 	GetSkewness(void);
 	double 	GetKurtosis(void);
+	double 	GetEntropy(void);
 
 	double 	GetShape(void);
 	double 	GetScale(void);
